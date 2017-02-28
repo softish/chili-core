@@ -14,7 +14,7 @@ git clone https://github.com/codingchili/chili-core.git
 
 Create a JAR in **prototype/** with all services bundled, requires gradle to be installed
 ```
-gradle jar
+gradlew jar
 ```
 
 Start the server from **prototype/**
