@@ -1,9 +1,14 @@
+apply plugin: 'checkstyle'
+
 group = 'com.codingchili'
 version = '1.0-SNAPSHOT'
+description = """"""
 
 libsDirName = "../../prototype"
 
-description = """"""
+checkstyle {
+    configFile = 'checkstyle.xml' as File
+}
 
 jar {
     from {
