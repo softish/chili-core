@@ -16,7 +16,6 @@ public class Service extends ClusterNode {
         for (int i = 0; i < settings.getHandlers(); i++) {
             context.deploy(new SocialHandler<>(context));
         }
-
         start.complete();
     }
 }

@@ -13,20 +13,20 @@ import java.util.Collection;
 public interface AsyncStorage<Key, Value> {
 
     /**
-     * get an entry with the given key
+     * get an entry with the given key.
      * @param key a unique key identifying an entry
      */
     void get(Key key, Handler<AsyncResult<Value>> handler);
 
     /**
-     * set the entry identified by the given key to the given value
+     * set the entry identified by the given key to the given value.
      * @param key a key to uniquely identify the entry
      * @param value the value to be set for the given key
      */
     void put(Key key, Value value, Handler<AsyncResult<Void>> handler);
 
     /**
-     * set the entry identified by the given key to the given value
+     * set the entry identified by the given key to the given value.
      * @param key a key to uniquely identify the entry
      * @param value the value to be set for the given key
      * @param ttl the time to live for the entry
@@ -34,14 +34,14 @@ public interface AsyncStorage<Key, Value> {
     void put(Key key, Value value, long ttl, Handler<AsyncResult<Void>> handler);
 
     /**
-     * set the entry if it does not already exists
+     * set the entry if it does not already exists.
      * @param key used to check if the entry exists and to set the value for.
      * @param value the value to be set if the entry does not exist.
      */
     void putIfAbsent(Key key, Value value, Handler<AsyncResult<Void>> handler);
 
     /**
-     * set the entry if it does not already exists
+     * set the entry if it does not already exists.
      * @param key used to check if the entry exists and to set the value for.
      * @param value the value to be set if the entry does not exist.
      * @param ttl the time to live for the entry
@@ -78,14 +78,14 @@ public interface AsyncStorage<Key, Value> {
     void queryExact(String attribute, Comparable comparable, Handler<AsyncResult<Collection<Value>>> handler);
 
     /**
-     * queries the storage for a similar match given a single attribute
+     * queries the storage for a similar match given a single attribute.
      * @param attribute the attribute as a string to query for
      * @param comparable the value to match with using starts-with
      */
     void querySimilar(String attribute, Comparable comparable, Handler<AsyncResult<Collection<Value>>> handler);
 
     /**
-     * queries the storage on an attribute within the given range
+     * queries the storage on an attribute within the given range.
      * @param attribute the attribute as a string to query for
      * @param from inclusive minimum value
      * @param to inclusive max value

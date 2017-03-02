@@ -1,4 +1,4 @@
-package com.codingchili.core.storage.exception;
+package com.codingchili.core.storage;
 
 import com.codingchili.core.configuration.CoreStrings;
 import com.codingchili.core.context.CoreException;
@@ -10,7 +10,7 @@ import com.codingchili.core.context.CoreException;
  */
 public class NothingToReplaceException extends CoreException {
 
-    public NothingToReplaceException(Object key) {
+    NothingToReplaceException(Object key) {
         super(CoreStrings.getNothingToReplaceException(key.toString()));
     }
 }

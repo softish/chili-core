@@ -7,6 +7,8 @@ import com.codingchili.core.context.*;
 import com.codingchili.core.security.RemoteIdentity;
 
 /**
+ * Mock context for testing.
+ *
  * @author Robin Duda
  */
 public class ContextMock extends ServiceContext implements CoreContext {
@@ -20,7 +22,7 @@ public class ContextMock extends ServiceContext implements CoreContext {
 
     @Override
     protected ServiceConfigurable service() {
-        return new ServiceConfigurable() {};
+        return new ServiceConfigurable() { };
     }
 
     @Override

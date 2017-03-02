@@ -15,6 +15,10 @@ import com.codingchili.core.testing.MapTestCases;
  *         <p>
  *         Tests for the storage providers in core. Reuse these tests when new
  *         storage subsystems are implemented using the StorageLoader.
+ *
+ *         This class creates a clustered vertx/hazelcast enabled instance
+ *         for use in the tests. This instance is reused for all test cases
+ *         as it takes some time to set up.
  */
 @RunWith(VertxUnitRunner.class)
 public class HazelMapIT extends MapTestCases {

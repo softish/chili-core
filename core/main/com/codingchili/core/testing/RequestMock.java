@@ -13,20 +13,41 @@ import com.codingchili.core.protocol.ResponseStatus;
 import static com.codingchili.core.configuration.CoreStrings.*;
 
 /**
- * @author Robin Duda
- *
  * Mocked request object.
+ *
+ * @author Robin Duda
  */
 public abstract class RequestMock {
 
+    /**
+     * Get a mocked request that will write output to the given listener.
+     * @param listener a responselistener that receives the data written
+     *                 to the request.
+     * @return a Request Object that may be passed to a handler for testing.
+     */
     public static ClusterRequestMock get(ResponseListener listener) {
         return get("", listener);
     }
 
+    /**
+     * Get a mocked request that will write output to the given listener.
+     * @param route the route that the request is targeting.
+     * @param listener a responselistener that receives the data written to the
+     *                 request.
+     * @return a Request Object that may be passed to a handler for testing.
+     */
     public static ClusterRequestMock get(String route, ResponseListener listener) {
         return get(route, listener, new JsonObject());
     }
 
+    /**
+     * Get a mocket request that will write output to the given listener.
+     * @param route the route that the request is targeting.
+     * @param listener a responselistener that receives the data written to the
+     *                 request.
+     * @param json the request payload
+     * @return a Request Object that may be passed to a handler for testing
+     */
     public static ClusterRequestMock get(String route, ResponseListener listener, JsonObject json) {
         return new ClusterRequestMock(new MessageMock(route, listener, json));
     }

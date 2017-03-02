@@ -1,5 +1,6 @@
 package com.codingchili.core.storage;
 
+import io.vertx.core.Vertx;
 import io.vertx.ext.unit.TestContext;
 import io.vertx.ext.unit.junit.VertxUnitRunner;
 import org.junit.After;
@@ -16,14 +17,8 @@ import com.codingchili.core.testing.MapTestCases;
  */
 @RunWith(VertxUnitRunner.class)
 public class JsonMapTest extends MapTestCases {
-
     @Before
     public void setUp(TestContext test) {
-        super.setUp(test, JsonMap.class);
-    }
-
-    @After
-    public void tearDown(TestContext test) {
-        super.tearDown(test);
+        super.setUp(test.async(), JsonMap.class, Vertx.vertx());
     }
 }

@@ -4,10 +4,17 @@ import com.codingchili.core.logging.*;
 
 /**
  * @author Robin Duda
+ *
+ * Test class to mock the logger.
  */
 public class LoggerMock extends ConsoleLogger {
     private MockLogListener listener;
 
+    /**
+     * Create a new logger mock.
+     * @param listener a listener that receives all the event sourced
+     *                 to the logger.
+     */
     public LoggerMock(MockLogListener listener) {
         this.listener = listener;
     }

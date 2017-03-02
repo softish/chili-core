@@ -1,4 +1,4 @@
-package com.codingchili.core.storage.exception;
+package com.codingchili.core.storage;
 
 import com.codingchili.core.configuration.CoreStrings;
 import com.codingchili.core.context.CoreException;

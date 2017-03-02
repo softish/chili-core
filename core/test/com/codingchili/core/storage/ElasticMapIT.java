@@ -1,5 +1,6 @@
 package com.codingchili.core.storage;
 
+import io.vertx.core.Vertx;
 import io.vertx.ext.unit.Async;
 import io.vertx.ext.unit.TestContext;
 import io.vertx.ext.unit.junit.VertxUnitRunner;
@@ -19,26 +20,21 @@ public class ElasticMapIT extends MapTestCases {
     private static final int ELASTIC_REFRESH = 1200;
 
     public ElasticMapIT() {
-        /**
-         * sets a delay between initializing the database and starting the tests.
-         * This is required as elasticsearch is near-real-time only.
+        /*
+          sets a delay between initializing the database and starting the tests.
+          This is required as elasticsearch is near-real-time only.
          */
         delay = ELASTIC_REFRESH;
     }
 
     @Before
     public void setUp(TestContext test) {
-        super.setUp(test, ElasticMap.class);
-    }
-
-    @After
-    public void tearDown(TestContext test) {
-        super.tearDown(test);
+        super.setUp(test.async(), ElasticMap.class, Vertx.vertx());
     }
 
     /**
      * elasticsearch is near-realtime which means that clear
-     * does not return realtime results.
+     * does not return realtime results. Hence the overriden clear method.
      */
     @Override
     @Test

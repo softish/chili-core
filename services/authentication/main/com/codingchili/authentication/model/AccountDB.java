@@ -4,8 +4,8 @@ import io.vertx.core.*;
 
 import com.codingchili.core.security.*;
 import com.codingchili.core.storage.AsyncStorage;
-import com.codingchili.core.storage.exception.ValueAlreadyPresentException;
-import com.codingchili.core.storage.exception.ValueMissingException;
+import com.codingchili.core.storage.ValueAlreadyPresentException;
+import com.codingchili.core.storage.ValueMissingException;
 
 /**
  * @author Robin Duda
